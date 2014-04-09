@@ -24,7 +24,7 @@ class RideController < ApplicationController
 
   #rails 4 way to do things
   def ride_params
-    params.permit(:Driver_ID, :Start_Address, :End_Address, :Time)
+    params.require(:ride).permit(:Driver_ID, :Start_Address, :End_Address, :Time)
   end
 
 end
