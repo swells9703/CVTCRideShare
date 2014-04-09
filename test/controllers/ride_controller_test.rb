@@ -2,9 +2,17 @@ require 'test_helper'
 
 class RideControllerTest < ActionController::TestCase
 
+  #fixtures :rides
+
   #this will fail until the Ride/index view is created
   test "should get index" do
     get :index
+    assert_response :success
+  end
+
+  #this will fail until the Ride/show view is created and we have a mock rec
+  test "should show ride" do
+    get :show, :id => 1
     assert_response :success
   end
 
