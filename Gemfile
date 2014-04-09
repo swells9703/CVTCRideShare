@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 #geocoder for geolocation
 gem "geocoder"
+gem "test-unit"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
