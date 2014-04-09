@@ -17,6 +17,7 @@ class RideController < ApplicationController
       redirect_to @ride
     else
       render "new"
+    end
   end
 
 end
