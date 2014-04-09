@@ -7,8 +7,11 @@ class RideController < ApplicationController
 
   end
 
-  #TODO notify on view if save fail 
   def new
+    @ride = Ride.new  
+  end
+
+  def create
     @ride = Ride.new(params[:ride]) 
     if @ride.save 
       redirect_to @ride
