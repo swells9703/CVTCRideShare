@@ -12,5 +12,11 @@ class Ride < ActiveRecord::Base
     rideGeoLoc
 
   end
+  
+  def self.search(args)
+    
+    
+    
+  end
 
 end
