@@ -15,7 +15,7 @@ class Ride < ActiveRecord::Base
   
   def self.search(args)
     
-    
+    return Ride.find(:all, :conditions => ["Start_Address like :Start_Address", args])
     
   end
 
