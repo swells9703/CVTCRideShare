@@ -10,4 +10,14 @@ class RideTest < ActiveSupport::TestCase
     assert_equal(1, searchedRides.length)
    end
   
+  test "can search by End_Address" do
+    tmpRide = Ride.new
+    tmpRide.End_Address = "1234 1st Ave, Chippewa Falls, WI, 54703"
+    tmpRide.save
+    
+    searchedRides = Ride.search({:End_Address => "%Chippewa Falls%"})
+    assert_equal(1, searchedRides.length)
+  end
+  
+  
 end
