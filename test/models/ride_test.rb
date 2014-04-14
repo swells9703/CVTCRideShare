@@ -24,7 +24,7 @@ class RideTest < ActiveSupport::TestCase
     tmpRide.Time = "2014-5-4"
     tmpRide.save
     
-    searchedRides = Ride.search({:Time => "2014-5-4"})
+    searchedRides = Ride.search({:Time => "2014-05-04"})
     assert_equal(1, searchedRides.length)
   end
   
