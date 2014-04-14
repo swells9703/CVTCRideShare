@@ -1,7 +1,7 @@
 class RideController < ApplicationController
 
   def index
-    
+    @ride = Ride.all
   end
 
   def show
