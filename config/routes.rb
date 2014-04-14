@@ -1,7 +1,13 @@
 CVTCRideShare::Application.routes.draw do
-  resources :ride
+
+  resources :ride do
+    collection do
+      get 'search'
+      get 'results'
+    end
+  end
   root :to => 'index#index'
   
-  post '/ride/search/:search', to: 'ride#search'
+
   
 end

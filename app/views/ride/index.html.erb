@@ -1,0 +1,12 @@
+<h2>All Rides</h2>
+<p>There are <%= @ride.length %> rides</p>
+<table>
+  <tr>
+    <th>Start Address</th><th>End Address</th><th>Date</th>
+  </tr>
+<% @ride.each do |ride| %>
+  <tr>
+    <td><%= ride.Start_Address %></td> <td><%= ride.End_Address %></td> <td><%= ride.Time %></td>
+  </tr>
+<% end %>
+</table>

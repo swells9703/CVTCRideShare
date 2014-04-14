@@ -1,0 +1,13 @@
+<h2>Ride Search</h2>
+<%= form_tag({controller: "ride", action: "results"}, method: "get") do %>
+  <%= label_tag(:Start_Address) %>
+  <%= text_field_tag(:Start_Address) %><br/>
+
+  <%= label_tag(:End_Address) %>
+  <%= text_field_tag(:End_Address) %><br/>
+
+  <%= label_tag(:Time) %>
+<%= select_date nil, prompt: true, prefix: "Time" %><br/>
+
+  <%= submit_tag("Search") %>
+<% end %>
