@@ -9,7 +9,7 @@ class RideController < ApplicationController
   end
 
   def search
-
+    @ride = Ride.search params[:search]
   end
 
   def new
