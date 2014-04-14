@@ -17,7 +17,7 @@ class Ride < ActiveRecord::Base
     tmpRides = Ride.all
     tmpRides = tmpRides.where("Start_Address like :Start_Address", args) if args.has_key?(:Start_Address)
     tmpRides = tmpRides.where("End_Address like :End_Address", args) if args.has_key?(:End_Address)
-    
+    tmpRides = tmpRides.where("Date(Time) = Date(:Time)", args) if args.has_key?(:Time)
     return tmpRides
     
   end
