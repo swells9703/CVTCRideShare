@@ -19,5 +19,13 @@ class RideTest < ActiveSupport::TestCase
     assert_equal(1, searchedRides.length)
   end
   
+  test "can search by Time" do
+    tmpRide = Ride.new
+    tmpRide.Time = "2014-5-4"
+    tmpRide.save
+    
+    searchedRides = Ride.search({:Time => "2014-5-4"})
+    assert_equal(1, searchedRides.length)
+  end
   
 end
