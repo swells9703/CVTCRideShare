@@ -9,7 +9,11 @@ class RideController < ApplicationController
   end
 
   def search
-    @ride = Ride.search params[:search]
+    
+  end
+  
+  def results
+    @ride = Ride.search params
   end
 
   def new
@@ -17,12 +21,10 @@ class RideController < ApplicationController
   end
 
   def create
-    @ride = Ride.new(ride_params)
-    if @ride.save 
-      redirect_to @ride
-    else
-      render "new"
-    end
+    @created = Ride.new(ride_params)
+    @created.save
+    @ride = Ride.new
+    render "new"    
     
   def cancle
     Ride.find(params[:id]).destroy
