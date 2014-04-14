@@ -15,9 +15,11 @@ class Ride < ActiveRecord::Base
   
   def self.search(args)
     tmpRides = Ride.all
-    tmpRides = tmpRides.where("Start_Address like :Start_Address", args) if args.has_key?(:Start_Address)
-    tmpRides = tmpRides.where("End_Address like :End_Address", args) if args.has_key?(:End_Address)
-    tmpRides = tmpRides.where("Date(Time) = Date(:Time)", args) if args.has_key?(:Time)
+    args[:Time].delete_if {|k,v| not v.present? }
+    logger.debug args
+    tmpRides = tmpRides.where("Start_Address like ?", "%" + args[:Start_Address] + "%") if args[:Start_Address].present?
+    tmpRides = tmpRides.where("End_Address like ?", "%" + args[:End_Address] + "%") if args[:End_Address].present?
+    tmpRides = tmpRides.where("Date(Time) = Date(:Time)", args[:Time].map{|k,v| v }.join("-")) if args[:Time].present?
     return tmpRides
     
   end
