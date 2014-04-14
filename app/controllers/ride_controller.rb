@@ -23,6 +23,11 @@ class RideController < ApplicationController
     else
       render "new"
     end
+    
+  def cancle
+    Ride.find(params[:id]).destroy
+    redirect_to :action => 'list'
+  end
   end
 
   private
