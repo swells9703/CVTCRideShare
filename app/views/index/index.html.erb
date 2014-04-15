@@ -1,2 +1,17 @@
 
-<p>This is the index page in the index controller.</p>
+  <div class="body">
+    <div class = "section1"><%= form_tag({controller: "ride", action: "results"}, method: "get") do %>
+  <%= label_tag(:Start_Address) %>
+  <%= text_field_tag(:Start_Address) %><br/>
+
+  <%= label_tag(:End_Address) %>
+  <%= text_field_tag(:End_Address) %><br/>
+
+  <%= label_tag(:Time) %>
+<%= select_date nil, prompt: true, prefix: "Time" %><br/>
+
+  <%= submit_tag("Search") %>
+<% end %></div>
+     <div class = "section2">Details</div>
+     <div class = "section3">trips</div>
+  </div>

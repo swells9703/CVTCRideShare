@@ -52,7 +52,17 @@ nav,
 section {
   display: block;
 }
-
+.section1 {
+  float:left;
+ font-weight: Bold;
+}
+.section2 {
+ float: right;
+}
+.section3 {
+  clear:both;
+  float: left;
+}
 audio,
 canvas,
 video {
