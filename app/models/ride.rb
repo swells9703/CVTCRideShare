@@ -1,4 +1,6 @@
 class Ride < ActiveRecord::Base
+  validates_presenece_of :Start_Address, :End_Address, :Time
+
 
   def self.getGeoRideData
 
