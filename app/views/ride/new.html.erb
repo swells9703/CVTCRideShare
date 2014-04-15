@@ -1,5 +1,10 @@
 <h2>Add Ride</h2>
 <%= form_for @ride, url: {action: "create"} do|f| %>
+<% if flash[:notice] %>
+  <div class="notice">
+    <%= flash[:notice]  %>
+  </div>
+<@ end @>
 
 <%= f.label :Start_Address %>
 <%= f.text_field :Start_Address %><br/>
