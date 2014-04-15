@@ -21,11 +21,11 @@ class RideController < ApplicationController
   end
 
   def create
+    flash[:notice] = "The new ride was successfully created."
     @created = Ride.new(ride_params)
     @created.save
     @ride = Ride.new
     render "new"    
-    
   end
 
   private
