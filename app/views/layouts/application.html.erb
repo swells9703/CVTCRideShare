@@ -13,11 +13,7 @@
       </header>
       <section class-"content">
         <nav>
-          <%=link_to "Home", root_url %>
-          <%=link_to "All Rides", :controller=>"ride", :action=>"index" %>
-          <%=link_to "New Ride", :controller=>"ride", :action=>"new" %>
-          <%=link_to "Ride Search", :controller=>"ride", :action=>"search" %>
-          <%=link_to "Ride Results", :controller=>"ride", :action=>"results" %>
+          
         </nav>
         <%= yield %>
       </section>
