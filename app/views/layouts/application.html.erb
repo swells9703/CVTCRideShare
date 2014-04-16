@@ -6,9 +6,24 @@
   <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <div class-"container">
+      <header>
+        <h1>CVTC RideShare</h1>
+      </header>
+      <section class-"content">
+        <nav>
+          <%=link_to "Home", root_url %>
+          <%=link_to "All Rides", :controller=>"ride", :action=>"index" %>
+          <%=link_to "New Ride", :controller=>"ride", :action=>"new" %>
+          <%=link_to "Ride Search", :controller=>"ride", :action=>"search" %>
+          <%=link_to "Ride Results", :controller=>"ride", :action=>"results" %>
+        </nav>
+        <%= yield %>
+      </section>
+      <footer>
+        <h4>Copyright <%=Date.today.year %></h4>
+      </footer>
+    </div>
+  </body>
 </html>
