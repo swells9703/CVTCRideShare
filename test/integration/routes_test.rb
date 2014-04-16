@@ -20,7 +20,7 @@ class RoutesTest < ActionDispatch::IntegrationTest
   end
   
   test "has route /ride/search/:search" do
-    assert_generates "/ride/search/searchquery", { :controller => "ride", :action => "search", :search => "searchquery" }       
+    assert_recognizes({ :controller => "ride", :action => "search", :search => "searchquery"}, '/ride/search/' }       
   end
   ############################ Index Controller ############################
 end
