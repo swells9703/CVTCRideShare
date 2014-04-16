@@ -3,7 +3,6 @@ class Ride < ActiveRecord::Base
 
   
   def self.search(args)
-    logger.debug Date.parse(args[:Time].map{|k,v| v }.join("-"))
     tmpRides = Ride.all
     args[:Time].delete_if {|k,v| not v.present? } if args[:Time].present?
     tmpRides = tmpRides.where("Start_Address like ?", "%" + args[:Start_Address] + "%") if args[:Start_Address].present?
