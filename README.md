@@ -11,7 +11,7 @@ How to update your fork to the current working copy (Vandise/CVTCRideShare):<br>
 1.) clone your fork and cd into that directory<br>
 2.) checkout a new branch with the command: git checkout -b vandise-master master <br>
 3.) pull down the working master repo: git pull https://github.com/Vandise/CVTCRideShare.git master <br>
----- Note: you may get merge conflicts, type git status to see which files may need changes.
+---- Note: you may get merge conflicts, type git status to see which files may need changes.<br>
 4.) if you need to merge your changes, open the file in an editor and merge them (use the github tutorials if you need help)<br>
 5.) Once you have your merge conflicts fixed type: git add myConflictedFile or git add . <br>
 6.) Then commit the file(s): git commit <br>
