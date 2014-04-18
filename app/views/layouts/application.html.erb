@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>CVTCRideShare</title>
-  <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,18 +11,18 @@
       <header>
         <h1>CVTC RideShare</h1>
       </header>
-      <section class-"content">
+      <section class-"nav">
         <nav>
-          <%=link_to "Home", root_url %>
-          <%=link_to "All Rides", :controller=>"ride", :action=>"index" %>
-          <%=link_to "New Ride", :controller=>"ride", :action=>"new" %>
-          <%=link_to "Ride Search", :controller=>"ride", :action=>"search" %>
+          <%=link_to "Home", root_url %> |
+          <%=link_to "All Rides", :controller=>"ride", :action=>"index" %> |
+          <%=link_to "New Ride", :controller=>"ride", :action=>"new" %> |
+          <%=link_to "Ride Search", :controller=>"ride", :action=>"search" %> |
           <%=link_to "Ride Results", :controller=>"ride", :action=>"results" %>
         </nav>
         <%= yield %>
       </section>
       <footer>
-        <h4>Copyright <%=Date.today.year %></h4>
+        A-Team Productions Copyright &copy; <%=Date.today.year %>
       </footer>
     </div>
   </body>
