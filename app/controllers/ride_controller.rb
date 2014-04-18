@@ -21,11 +21,16 @@ class RideController < ApplicationController
   end
 
   def create
-    flash[:notice] = "The new ride was successfully created."
-    @created = Ride.new(ride_params)
-    @created.save
-    @ride = Ride.new
-    render "new"    
+    @ride = Ride.new(ride_params)
+    respond_to do |format|
+      if @ride.save
+        format.html { redirect_to @ride, notice: 'New ride was successfully created.'}
+        format.json { render action:'new', status: created, location: @ride}
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @ride.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
