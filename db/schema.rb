@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409162142) do
+ActiveRecord::Schema.define(version: 20140416163901) do
 
   create_table "rides", force: true do |t|
     t.integer  "Driver_ID"
     t.string   "Start_Address"
     t.string   "End_Address"
     t.datetime "Time"
+    t.integer  "seat_count"
+    t.integer  "seats_booked"
+    t.decimal  "price"
+    t.text     "preferences"
   end
 
 end
