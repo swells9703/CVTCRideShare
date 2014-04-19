@@ -1,7 +1,7 @@
 CVTCRideShare::Application.routes.draw do
   
   devise_for :users
-  root :to => "index#index"
+  root :to => 'ride#search'
   
   resources :ride do
     collection do
@@ -9,7 +9,5 @@ CVTCRideShare::Application.routes.draw do
       get 'results'
     end
   end
-  
 
-  
 end
