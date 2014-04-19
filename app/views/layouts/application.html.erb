@@ -12,7 +12,8 @@
         <h1>CVTC RideShare</h1>
       </header>
       <section class-"nav">
-        <nav> |
+        <nav> 
+          <%=link_to "Home", root_url %> |
           <%=link_to "New Ride", :controller=>"/ride", :action=>"new" %> |
           <%=link_to "Ride Search", :controller=>"/ride", :action=>"search" %> |
         </nav>
