@@ -1,5 +1,6 @@
 class RideController < ApplicationController
-
+   before_filter :authenticate_user!, :only => [:show]
+  
   def index
     @ride = Ride.all
   end
