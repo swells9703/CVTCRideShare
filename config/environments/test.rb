@@ -33,4 +33,16 @@ CVTCRideShare::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  
+  #to test the email sender, change the address to your nitrous box!
+  config.action_mailer.default_url_options = { :host => 'http://soyouwanttomakeawebsite-103262.use1-2.nitrousbox.com' }  
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "ba596643@gmail.com",
+    :password             => "5ecurepassword",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end
