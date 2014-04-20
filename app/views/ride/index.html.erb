@@ -7,6 +7,7 @@
 <% @ride.each do |ride| %>
   <tr>
     <td><%= ride.Start_Address %></td> <td><%= ride.End_Address %></td> <td><%= ride.Time %></td>
+    <td><%= ride.seat_count %></td> <td><%= ride.preferences %></td> <td><%= ride.price %></td>
   </tr>
 <% end %>
 </table>
