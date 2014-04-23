@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419210353) do
+ActiveRecord::Schema.define(version: 20140423030529) do
 
   create_table "rides", force: true do |t|
     t.integer  "Driver_ID"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140419210353) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "preferences"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
