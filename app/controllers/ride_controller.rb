@@ -31,18 +31,17 @@ class RideController < ApplicationController
     else
       flash[:notice] = 'You do not have permissions to edit this ride.'
       redirect_to :action => 'show', :id => @ride
-      end
     end
   end
   
   def update
-    respond_to do |format|
-      if @ride.update_attributes(params[:ride])
-        flash[:notice] = 'Ride was successfully updated.'
-        redirect_to root_path
-      else
-        render :action => 'edit'
-      end 
+    @ride = Ride.find(params[:id])
+    if @ride.update_attributes(ride_params)
+      flash[:notice] = 'Ride was successfully updated.'
+      redirect_to @ride
+    else
+      render :action => 'edit'
+    end 
   end
 
   def create
@@ -63,7 +62,7 @@ class RideController < ApplicationController
 
   #rails 4 way to do things
   def ride_params
-    params.require(:ride).permit(:Driver_ID, :Start_Address, :End_Address, :seat_count, :price, :preferences, :Time)
+    params.require(:ride).permit(:Driver_ID, :Start_Address, :End_Address, :seat_count, :seats_booked, :price, :preferences, :Time)
   end
 
 end
