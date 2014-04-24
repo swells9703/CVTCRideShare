@@ -11,7 +11,7 @@ class RideRequestMailer < ActionMailer::Base
   def ride_request(ride_id)
     @ride       = Ride.find(ride_id)
     @ride_owner = User.find(@ride.Driver_ID)
-    @req_user   = current_user.id
+    @req_user   = User.find(current_user.id)
     @token      = Digest::SHA1.hexdigest(@ride.id + @req_user.id)
     
     #change to first name or something in the future
