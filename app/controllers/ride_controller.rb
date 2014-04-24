@@ -23,6 +23,9 @@ class RideController < ApplicationController
 
   def create
     @ride = Ride.new(ride_params)
+    #assign the driver id = to the current_user id
+    @ride.Driver_ID = current_user.id
+    
     respond_to do |format|
       if @ride.save
         format.html { redirect_to @ride, notice: 'New ride was successfully created.'}
