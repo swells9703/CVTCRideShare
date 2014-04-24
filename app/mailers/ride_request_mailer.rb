@@ -7,10 +7,10 @@ class RideRequestMailer < ActionMailer::Base
   #id      :int, unique ride_request id
   #ride_id :int, the rides id in the ride table
   #user_id :int, requestors id
-  #RideRequestMailer.ride_request(@ride_owner,@req_user,ride_id).deliver
-  def ride_request(ride,)
-    @ride_owner = User.find(ride.user_id)
-    @req_user   = req_user
+  #RideRequestMailer.ride_request(ride_id).deliver
+  def ride_request(ride_id)
+    @ride_owner = User.find(ride.Driver_ID)
+    @req_user   = current_user.id
     @ride       = Ride.find(ride_id)
     @token      = Digest::SHA1.hexdigest(@ride.id + @req_user.id)
     
