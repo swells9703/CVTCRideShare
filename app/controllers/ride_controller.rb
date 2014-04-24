@@ -20,12 +20,34 @@ class RideController < ApplicationController
   def new
     @ride = Ride.new  
   end
+  
+  def edit
+    @ride = Ride.find(params[:id])
+    if current_user.id == @ride.Driver_ID
+      #count the amount of seats taken to set the lowest amount the user can set
+      #this will be done when the requests table is made
+      @minSeats = 0
+      @maxSeats = @minSeats + 10
+    else
+      flash[:notice] = 'You do not have permissions to edit this ride.'
+      redirect_to :action => 'show', :id => @ride
+      end
+    end
+  end
+  
+  def update
+    respond_to do |format|
+      if @ride.update_attributes(params[:ride])
+        flash[:notice] = 'Ride was successfully updated.'
+        redirect_to root_path
+      else
+        render :action => 'edit'
+      end 
+  end
 
   def create
     @ride = Ride.new(ride_params)
-    #assign the driver id = to the current_user id
     @ride.Driver_ID = current_user.id
-    
     respond_to do |format|
       if @ride.save
         format.html { redirect_to @ride, notice: 'New ride was successfully created.'}
