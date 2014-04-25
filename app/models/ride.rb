@@ -9,7 +9,11 @@ class Ride < ActiveRecord::Base
     tmpRides = tmpRides.where("End_Address like ?", "%" + args[:End_Address] + "%") if args[:End_Address].present?
     tmpRides = tmpRides.where("Date(Time) = Date(?)", Date.parse(args[:Time].map{|k,v| v }.join("-"))) if args[:Time].present?
     return tmpRides
-    
+  end
+  
+  #returns two nested arrays [ :start => [long,lat], :end => [long,lat] ]
+  def getStartEndCoordinates
+    return Geocoder.coordinates(self.Start_Address), Geocoder.coordinates(self.End_Address)
   end
 
 end

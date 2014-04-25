@@ -7,6 +7,7 @@ class RideController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
+    @markers = @ride.getStartEndCoordinates
   end
 
   def search
