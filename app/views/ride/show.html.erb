@@ -1,6 +1,38 @@
-<%= javascript_tag defer: 'defer' do -%>
-  alert('All is good')
-<% end -%>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+  
+  var markers = <%= @markers %>
+  var startLocation = new google.maps.LatLng(markers[0][0], markers[0][1]);
+  var endLocation = new google.maps.LatLng(markers[1][0], markers[1][1]);
+  
+  var map;
+  var mapOptions = { center: new google.maps.LatLng(markers[0][0], markers[0][1]), zoom: 3,
+          mapTypeId: google.maps.MapTypeId.ROADMAP };
+
+      function initialize() {
+        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer({
+          suppressMarkers: false,
+          suppressInfoWindows: true
+        });
+        directionsDisplay.setMap(map);
+        
+        var request = {
+          origin: startLocation, 
+          destination: endLocation,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+        directionsService.route(request, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+          }
+        });
+          }
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+  
 <h3>Ride Added</h3>
 <p>You added:</p>
 <table>
@@ -12,3 +44,6 @@
     <td><%= @ride.seat_count %></td> <td><%= @ride.preferences %></td> <td><%= @ride.price %></td>
   </tr>
 </table>
+<div id="map_canvas" style="height:400px; width:400px;"></div>
+
+
