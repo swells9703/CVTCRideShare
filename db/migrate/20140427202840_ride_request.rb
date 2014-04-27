@@ -5,7 +5,8 @@ class RideRequest < ActiveRecord::Migration
       t.integer :Unique_Identifier
       t.integer :Ride_ID
       t.integer :Requester_ID
-      t.string :confirmed, :boolean, default: false
+      t.boolean :confirmed, default: false
+      t.string :token
     end
     
   end
