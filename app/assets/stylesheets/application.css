@@ -1,7 +1,11 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 30px;
+}
+
+.container {
+  position: absolute;
 }
 
 footer {
@@ -10,16 +14,17 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 	width: 30%;
-	color: #FFF;
-	text-shadow: 1px 1px 0.8px #000;
-	font-size: 15px;
+	color: #333;
+	text-shadow: 1px 1px 0.8px #CCC;
+	font-size: 12px;
+  padding: 10px;
 }
 
 nav {
-	margin: 5px 0 5px 5px;
+	margin: 30px 0 40px 5px;
 	font-weight: bold;
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 nav a {
@@ -27,12 +32,11 @@ nav a {
 }
 
 nav a:hover {
-	color: #333;
 	text-decoration: none;
 }
 
 .section1 {
-  padding-left:40px;
+  padding-left: 20px;
   position:relative;
 	float: left;
 	font-weight: bold;
@@ -47,7 +51,7 @@ nav a:hover {
   position:absolute;
 	float: right;
 	font-weight: bold;
-  margin-left:460px;
+  margin-left: 40px;
 	width: 600px;
 	height: 300px;
 	-moz-box-shadow: 3px 3px 5px 3px #000;

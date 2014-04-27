@@ -28,7 +28,7 @@ CVTCRideShare::Application.configure do
   config.assets.debug = true
 
   #to test the email sender, change the address to your nitrous box!
-  config.action_mailer.default_url_options = { :host => 'http://pyke-rails-94537.use1-2.nitrousbox.com' }  
+  config.action_mailer.default_url_options = { :host => 'http://djones-rails-101461.use1-2.nitrousbox.com' }  
   ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
