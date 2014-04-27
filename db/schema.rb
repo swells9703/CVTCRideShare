@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419210353) do
+ActiveRecord::Schema.define(version: 20140427202840) do
+
+  create_table "request", force: true do |t|
+    t.integer "Unique_Identifier"
+    t.integer "Ride_ID"
+    t.integer "Requester_ID"
+    t.string  "confirmed",         default: "f"
+    t.string  "boolean",           default: "f"
+  end
 
   create_table "rides", force: true do |t|
     t.integer  "Driver_ID"
