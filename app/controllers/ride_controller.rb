@@ -45,6 +45,16 @@ class RideController < ApplicationController
     end 
   end
 
+  def delete
+    @ride = Ride.find(params[:id])
+    if @ride.delete_attributes(ride_params)
+      flash[:notice] = 'Ride was successfully deleted.'
+      redirect_to @ride
+    else
+      render :action => 'delete'
+    end 
+  end
+  
   def create
     @ride = Ride.new(ride_params)
     @ride.Driver_ID = current_user.id
