@@ -29,6 +29,7 @@ GEM
     atomic (1.1.16)
     bcrypt (3.1.7)
     bcrypt (3.1.7-x86-mingw32)
+    bitmask (0.1.0)
     builder (3.1.4)
     cancancan (1.7.1)
     coffee-rails (4.0.1)
@@ -127,6 +128,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bitmask
   cancancan (~> 1.7)
   coffee-rails (~> 4.0.0)
   devise

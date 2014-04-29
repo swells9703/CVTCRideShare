@@ -39,6 +39,9 @@ end
 gem 'devise'
 
 gem 'cancancan', '~> 1.7'
+
+gem 'bitmask'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
