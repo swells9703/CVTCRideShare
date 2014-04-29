@@ -1,4 +1,3 @@
-
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -12,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427164449) do
+ActiveRecord::Schema.define(version: 20140427202840) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,7 +31,13 @@ ActiveRecord::Schema.define(version: 20140427164449) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-ActiveRecord::Schema.define(version: 20140423030529) do
+  create_table "request", force: true do |t|
+    t.integer "Unique_Identifier"
+    t.integer "Ride_ID"
+    t.integer "Requester_ID"
+    t.string  "confirmed",         default: "f"
+    t.string  "boolean",           default: "f"
+  end
 
   create_table "rides", force: true do |t|
     t.integer  "Driver_ID"
@@ -69,4 +74,3 @@ ActiveRecord::Schema.define(version: 20140423030529) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
-

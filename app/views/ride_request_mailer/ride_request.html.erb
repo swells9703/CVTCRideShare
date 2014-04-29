@@ -9,7 +9,7 @@
      <%= @req_user.email %> has requested that they carpool with you for your trip from <%= @ride.Start_Address %> to <%= @ride.End_Address %>
     </p>
     <p>
-      To approve this request, click this link: <a href="<%= @token %>">Confirmation Link</a>.
+      To approve this request, click this link: <a href="http://localhost/request/accept/<%= @ride.id %>&token=<%= @token %>">Confirmation Link</a>.
     </p>
     <p>Please contact the requester directly via email to address any issues or concerns.</p>
   </body>
