@@ -1,0 +1,65 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 30px;
+}
+
+.container {
+  position: absolute;
+}
+
+footer {
+	clear: both;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+	color: #333;
+	text-shadow: 1px 1px 0.8px #CCC;
+	font-size: 12px;
+  padding: 10px;
+}
+
+nav {
+	margin: 30px 0 40px 5px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+nav a:hover {
+	text-decoration: none;
+}
+
+.section1 {
+  padding-left: 20px;
+  position:relative;
+	float: left;
+	font-weight: bold;
+	width: 400px;
+	height: 300px;
+	-moz-box-shadow: 3px 3px 5px 3px #000;
+	-webkit-box-shadow: 3px 3px 5px 3px #000;
+	box-shadow: 3px 3px 5px 3px #000;
+}
+
+.section2 {
+  position:absolute;
+	float: right;
+	font-weight: bold;
+  margin-left: 40px;
+	width: 600px;
+	height: 300px;
+	-moz-box-shadow: 3px 3px 5px 3px #000;
+	-webkit-box-shadow: 3px 3px 5px 3px #000;
+	box-shadow: 3px 3px 5px 3px #000;
+}
+
+.section3 {
+	clear: both;
+	float: left;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CVTCRideShare</title>
+  <%= stylesheet_link_tag    "application","bootstrap", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CVTC RideShare</h1>
+      </header>
+      <section class="nav">
+        <nav> 
+          <%=link_to "Home", root_url %> |
+          <%=link_to "Ride Search", :controller=>"/ride", :action=>"search" %> |
+          <% if user_signed_in? %>
+            <%=link_to "New Ride", :controller=>"/ride", :action=>"new" %> |
+            <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> |
+            <%= link_to('Edit registration', edit_user_registration_path) %> |
+          <% else %>
+            <%= link_to('Login', new_user_session_path)  %> |
+            <%= link_to('Register', new_user_registration_path)  %> |
+          <% end %>
+        </nav>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </section>
+      <footer>
+        A-Team Productions Copyright &copy; <%=Date.today.year %>
+      </footer>
+    </div>
+  </body>
+</html>

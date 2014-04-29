@@ -1,0 +1,16 @@
+<h3>Results</h3>
+<p>Your search found <%= @ride.length %> rides</p>
+<table>
+  <tr>
+    <th>Start Address</th><th>End Address</th><th>Date</th><th>Seat</th><th>Preferences</th><th>Price</th>
+  </tr>
+<% @ride.each do |ride| %>
+  <tr>
+    <td><%= ride.Start_Address %></td> <td><%= ride.End_Address %></td> <td><%= ride.Time %></td>
+    <td><%= ride.seat_count %></td> <td><%= ride.preferences %></td> <td><%= ride.price %></td>
+    <% if user_signed_in? && current_user.id == ride.Driver_ID %>
+    <td><%= link_to "Edit", edit_ride_path(ride) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
