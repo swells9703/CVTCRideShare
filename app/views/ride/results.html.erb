@@ -8,7 +8,10 @@
   <tr>
     <td><%= ride.Start_Address %></td> <td><%= ride.End_Address %></td> <td><%= ride.Time %></td>
     <td><%= ride.seat_count %></td> <td><%= ride.preferences %></td> <td><%= ride.price %></td>
+<<<<<<< HEAD
     <td><%=link_to "Book", :controller=>"/ride", :action=>"book" %></td>
+=======
+>>>>>>> 433bb01cd1189c03da270209636e8f42884b3965
     <% if user_signed_in? && current_user.id == ride.Driver_ID %>
     <td><%= link_to "Edit", edit_ride_path(ride) %></td>
     <% end %>

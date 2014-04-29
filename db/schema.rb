@@ -12,6 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140427164449) do
 
   create_table "admins", force: true do |t|
@@ -31,6 +32,9 @@ ActiveRecord::Schema.define(version: 20140427164449) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+=======
+ActiveRecord::Schema.define(version: 20140423030529) do
+>>>>>>> 433bb01cd1189c03da270209636e8f42884b3965
 
   create_table "rides", force: true do |t|
     t.integer  "Driver_ID"
