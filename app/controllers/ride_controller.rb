@@ -15,8 +15,11 @@ class RideController < ApplicationController
   end
   
   def book
+    request.new
+    @ride = Ride.find(params[:id])
     #currently book does not work. fake it
     ride_id = params[:id] ? params[:id] : 7
+    
     #send the email after creating the record
     if RideRequestMailer.ride_request(ride_id, current_user.id).deliver
       flash[:notice] = 'A ride request email has been to the driver, you will be notified when accepted.'
