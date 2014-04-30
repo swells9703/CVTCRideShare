@@ -1,4 +1,4 @@
-<h3>Add Ride</h3>
+<h3>Edit Ride</h3>
 <%= form_for @ride, url: {action: "update"} do|f| %>
 <% if flash[:notice] %>
   <div class="notice">
@@ -25,3 +25,4 @@
 <%= f.text_field :price %><br/>
 
 <%= f.submit "Update" %>
+<% end -%>

@@ -24,7 +24,7 @@ class RideController < ApplicationController
   
   def edit
     @ride = Ride.find(params[:id])
-    if user_signed_in? && current_user.id == @ride.Driver_ID
+    if can? :edit, @ride && current_user == @ride.Driver_ID
       #count the amount of seats taken to set the lowest amount the user can set
       #this will be done when the requests table is made
       @minSeats = 0
@@ -47,7 +47,7 @@ class RideController < ApplicationController
   
   def create
     @ride = Ride.new(ride_params)
-    @ride.Driver_ID = current_user.id
+    @ride.Driver_ID = current_user
     respond_to do |format|
       if @ride.save
         format.html { redirect_to @ride, notice: 'New ride was successfully created.'}

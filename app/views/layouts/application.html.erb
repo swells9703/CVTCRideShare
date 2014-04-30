@@ -15,7 +15,7 @@
         <nav> 
           <%=link_to "Home", root_url %> |
           <%=link_to "Ride Search", :controller=>"/ride", :action=>"search" %> |
-          <% if user_signed_in? %>
+          <% if can? :update, @rides %>
             <%=link_to "New Ride", :controller=>"/ride", :action=>"new" %> |
             <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> |
             <%= link_to('Edit registration', edit_user_registration_path) %> |

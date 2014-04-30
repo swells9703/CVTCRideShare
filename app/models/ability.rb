@@ -6,11 +6,10 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
        if user.admin?
-         can :manage, :all if user.is? :admin
-
+         can :manage, :all
        else
-         can :manage, Rides if user.is? :user
-         cannot :delete, Rides if user.is? :user
+         can [:edit, :update, :create], :all 
+         cannot :delete, :all 
        end
     #
     # The first argument to `can` is the action you are giving the user
