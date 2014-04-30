@@ -24,7 +24,7 @@ class RideController < ApplicationController
   
   def edit
     @ride = Ride.find(params[:id])
-    if can? :edit, @ride && current_user == @ride.Driver_ID
+    if can? :edit, @rides && current_user == @ride.Driver_ID
       #count the amount of seats taken to set the lowest amount the user can set
       #this will be done when the requests table is made
       @minSeats = 0

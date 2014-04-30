@@ -8,7 +8,7 @@
   <tr>
     <td><%= ride.Start_Address %></td> <td><%= ride.End_Address %></td> <td><%= ride.Time %></td>
     <td><%= ride.seat_count %></td> <td><%= ride.preferences %></td> <td><%= ride.price %></td>
-    <% if can? :create, @ride && current_user == ride.Driver_ID %>
+    <% if can? :create, @rides && current_user == ride.Driver_ID %>
     <td><%= link_to "Edit", edit_ride_path(ride) %></td>
     <% end %>
   </tr>
