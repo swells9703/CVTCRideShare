@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class RideRequestMailerTest < ActionMailer::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  test "Book Ride Email Sent" do
+    
+  end
+  
 end

@@ -14,6 +14,20 @@ class RideController < ApplicationController
     
   end
   
+  def book
+    request.new
+    @ride = Ride.find(params[:id])
+    #currently book does not work. fake it
+    ride_id = params[:id] ? params[:id] : 7
+    
+    #send the email after creating the record
+    if RideRequestMailer.ride_request(ride_id, current_user.id).deliver
+      flash[:notice] = 'A ride request email has been to the driver, you will be notified when accepted.'
+    else
+      flash[:notice] = 'An internal error occured, unable to send confirmation email.'
+    end
+  end
+  
   def results
     @ride = Ride.search params
   end
@@ -63,7 +77,7 @@ class RideController < ApplicationController
 
   #rails 4 way to do things
   def ride_params
-    params.require(:ride).permit(:Driver_ID, :Start_Address, :End_Address, :seat_count, :seats_booked, :price, :preferences, :Time)
+    params.require(:ride).permit(:id, :Driver_ID, :Start_Address, :End_Address, :seat_count, :seats_booked, :price, :preferences, :Time)
   end
 
 end

@@ -1,0 +1,11 @@
+<h1>Book Ride</h1>
+  <%= label_tag(:Start_Address) %>
+  <%= text_field_tag(:Start_Address) %><br/>
+
+  <%= label_tag(:End_Address) %>
+  <%= text_field_tag(:End_Address) %><br/>
+
+  <%= label_tag(:Time) %>
+  <%= select_date nil, prompt: true, prefix: "Time" %><br/>
+
+  <%= submit_tag("Submit") %>
